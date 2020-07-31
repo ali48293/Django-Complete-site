@@ -1,0 +1,68 @@
+ {% load static %}
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static 'devsList.css' %}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+</head>
+
+<body>
+    <nav>
+        <div class="container">
+            <h1 class="label">Django Proj</h1>
+            <ul>
+                <li><a href="{% url 'homePage' %}">Home</a></li>
+                <li><a href="{% url 'devs'  %}">Add Devs</a></li>
+
+
+                {% if user.is_authenticated %}
+                <li><a> Hello, {{user.first_name}}</a></li>
+                <li><a href="{% url 'logout' %}">Logout</a></li>
+                {% else %}
+                <li><a href="{% url 'login' %}">login</a></li>
+                <li><a href="{% url 'register' %}">Register</a></li>
+                {% endif %}
+            </ul>
+        </div>
+    </nav>
+    <div class="content">
+        <h1>Active Devs</h1>
+        <table>
+            <thead>
+                <tr>
+                    <td class="thead">Name</td>
+                    <td class="thead">Tools</td>
+                    <td class="thead">Skills</td>
+                    <td>
+                        <button><a href="{% url 'devs'  %}" >Add</a></button>
+                    </td>
+
+                </tr>
+            </thead>
+            <tbody>
+                {% for i in form %}
+                <tr>
+
+                    <td class="tbody">{{i.Name}}</td>
+                    <td class="tbody">{{i.Tool}}</td>
+                    <td class="tbody">{{i.Skills}} Related</td>
+
+
+                    <td>
+                        <button><a href="{% url 'update' i.id%}">Update</a></button>
+
+                    </td>
+                    <td><button><a href="{% url 'delete' i.id %}">Delete</a></button></td>
+                </tr>
+                {% endfor %}
+            </tbody>
+
+        </table>
+    </div>
+</body>
+
+</html>

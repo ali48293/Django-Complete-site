@@ -1,0 +1,47 @@
+{% load static %}
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static 'home.css' %}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+</head>
+
+<body>
+    <nav>
+        <div class="container">
+            <h1 class="label">Django Proj</h1>
+            <ul>
+
+                <li><a href="{% url 'homePage' %}">Home</a></li>
+                <li><a href="{% url 'devs' %}"> Add Devs</a></li>
+                <li><a href="{% url 'devsList' %}">Devs List </a></li>
+
+                {% if user.is_authenticated %}
+                <li><a>Hello, {{user.first_name}}</a></li>
+                <li><a href="{% url 'logout' %}">logout</a></li>
+
+                {% else %}
+
+                <li><a href="{% url 'login' %}">login</a></li>
+                <li><a href="{% url 'register' %}">Register</a></li>
+                {% endif %}
+            </ul>
+        </div>
+    </nav>
+    <div class="content">
+        <div class="circle"></div>
+        <h1>Django Dev</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed ut hic pariatur maiores vel id autem minima sapiente doloremque, impedit neque iure voluptatum optio nulla, consequatur animi enim quisquam Lorem ipsum dolor sit amet, consectetur adipisicing
+            elit. Nostrum dolor est quae inventore debitis fugiat rerum quos eos cumque necessitatibus adipisci modi distinctio Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad, inventore magni incidunt consequuntur dicta reprehenderit! Quidem
+            sed fugit delectus, deleniti ipsa voluptatibus placeat velit veniam neque corporis vel laborum vitae. Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi, pariatur dolores. Voluptate dolore in sapiente voluptatem nam! Sit, labore
+            quaerat eos laudantium voluptates nostrum ratione corporis. Culpa alias numquam quibusdam? quisquam cupiditate nobis, cum amet, explicabo alias? ullam.
+
+        </p>
+</body>
+
+</html>

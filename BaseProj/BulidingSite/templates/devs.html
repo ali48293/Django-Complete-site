@@ -1,0 +1,49 @@
+ {% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static 'devs.css' %}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DEVS Page</title>
+</head>
+
+<body>
+    <nav>
+        <div class="container">
+            <h1 class="label">Django Proj</h1>
+            <ul>
+                <li><a href="{% url 'homePage' %}">Home</a></li>
+                <li><a href="{% url 'devsList' %}">Devs List</a></li>
+                {% if user.is_authenticated %}
+                <li><a>Hello, {{user.first_name}}</a></li>
+                <li><a href="{% url 'logout' %}">logout</a></li>
+
+                {% else %}
+
+                <li><a href="">About</a></li>
+                <li><a href="{% url 'login' %}">login</a></li>
+                <li><a href="{% url 'register' %}">Register</a></li>
+                {% endif %}
+            </ul>
+        </div>
+    </nav>
+    <div class="regContainer">
+        <h1 class="heading">Registration Form</h1>
+        <form action="" method="post">
+            {% csrf_token %}
+            <h3>{{form}}</h3><br>
+
+            <input class="button" type="submit">
+            <!-- <input class="button" type="">
+            <a href=""></a> -->
+            <button class="button"> <a href="{% url 'devsList' %}" style="text-decoration: none; color:white;">Back to List</a></button>
+        </form>
+
+
+    </div>
+</body>
+
+</html>

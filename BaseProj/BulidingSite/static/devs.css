@@ -1,0 +1,110 @@
+body {
+    background: url("register.jpg");
+    /* background-position: center; */
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+* {
+    padding: 0;
+    margin: auto;
+}
+
+nav {
+    padding: 45px;
+    background-color: #555555;
+}
+
+.container {
+    width: 80%;
+}
+
+.label {
+    float: left;
+    font-size: 2.5em;
+    color: white;
+}
+
+ul {
+    padding-left: 50%;
+    padding-top: 2%;
+}
+
+ul li {
+    list-style: none;
+    float: left;
+}
+
+ul li a {
+    text-decoration: none;
+    padding: 20px;
+    font-size: 20px;
+    color: white;
+}
+
+.regContainer {
+    text-align: center;
+    margin: 20px;
+    overflow: hidden;
+}
+
+.heading {
+    font-size: 3em;
+    padding-bottom: 2%;
+    color: black;
+    font-weight: bolder;
+}
+
+input {
+    margin-left: 35%;
+    display: block;
+    padding: 10px;
+    width: 30%;
+    line-height: 30px;
+    transition: 0.5s;
+    background-color: black;
+    border-radius: 8px;
+    color: white;
+}
+
+input:hover {
+    transition: 0.5s;
+    background: white;
+    color: black;
+}
+
+.button {
+    margin-left: 52%;
+    display: block;
+    padding: 10px;
+    width: 15%;
+    line-height: 30px;
+    transition: 0.5s;
+    background-color: black;
+    border-radius: 8px;
+    color: white;
+    transition: 0.4s;
+}
+
+.button:hover {
+    background-color: white;
+}
+
+.button {
+    margin-left: 30%;
+    display: block;
+    padding: 10px;
+    width: 15%;
+    line-height: 30px;
+    transition: 0.5s;
+    background-color: black;
+    border-radius: 8px;
+    color: white;
+    transition: 0.4s;
+}
+
+.errors {
+    margin-left: 50%;
+    color: red;
+    font-size: 2em;
+}

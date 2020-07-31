@@ -1,0 +1,45 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <link rel="stylesheet" href="{% static 'login.css' %}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GET Registered</title>
+</head>
+
+<body>
+    <nav>
+        <div class="container">
+            <h1 class="label">Django Proj</h1>
+            <ul>
+                <li><a href="{% url 'homePage' %}">Home</a></li>
+                <li><a href="">About</a></li>
+                <li><a href="{% url 'login' %}">login</a></li>
+                <li><a href="{% url 'register' %}">Register</a></li>
+            </ul>
+        </div>
+    </nav>
+    <div style="margin-left:40%; color:red; font-size:2em; padding-top:3%;">
+        {% for message in messages %} {{message}} {% endfor %}
+    </div>
+    <div class="regContainer">
+        <h1 class="heading">Login Form</h1>
+        <form action="" method="post">
+
+            {% csrf_token %}
+            <input type="text" name="username" placeholder="userame"><br>
+            <input type="password" name="pass1" placeholder="Password"><br>
+
+
+            <button type="submit">Login</button>
+
+        </form>
+
+    </div>
+</body>
+
+</html>
